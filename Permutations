@@ -59,3 +59,28 @@ public class Permutations {
     }
 
 }
+/*class Solution {
+public:
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<int> desp;
+         vector<vector<int>> ans;
+     perm(desp, nums,ans);
+       return ans;
+    }
+    void  perm(vector<int>& desp, vector<int>& nums,   vector<vector<int>>& ans){
+        if(nums.empty()){
+             ans.push_back(desp);
+             return ;
+        }
+        
+        for(int i=0;i<=desp.size();i++){
+           vector<int> newDesp(desp);  // Make a copy to avoid affecting the original desp
+            newDesp.insert(newDesp.begin() + i, nums.front());
+            vector<int> newNums(nums.begin() + 1, nums.end());  // Exclude the first element
+            perm(newDesp, newNums, ans);
+        }
+        }
+        
+        
+    
+};*/

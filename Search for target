@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+         int i = -1, j = 0;
+         if(nums.size()==1&&target==nums[0])
+         return {0,0};
+
+        auto it = find(nums.begin(), nums.end(), target);
+        if (it != nums.end()) {
+            i = distance(nums.begin(), it);
+            
+           while(it!=nums.end()){
+            it = find(next(it), nums.end(), target);
+            if(it!=nums.end())
+                j = distance(nums.begin(), it);
+           }
+        }
+        if(i==-1)
+        return {-1,-1};
+        if(j==0)
+        j=i;
+        return {i, j};
+    }
+};

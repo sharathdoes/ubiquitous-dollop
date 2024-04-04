@@ -15,3 +15,29 @@ public class Main {
         subseq("", input, input.length());
     }
 }
+
+/*class Solution {
+  public List<List<Integer>> combinationSum(int[] cand, int tar) {
+    List<List<Integer>> list = new ArrayList<>();
+    List<Integer> l = new ArrayList<>();
+    comb(cand, 0, tar, l, list);
+    return list;
+  }
+
+  void comb(int[] cand, int i, int tar, List<Integer> l, List<List<Integer>> list) {
+
+    if (i == cand.length) {
+      if (tar==0)
+        list.add(new ArrayList<>(l));
+      return;
+    }
+    if (cand[i] <= tar) {
+      l.add(cand[i]);
+      comb(cand, i, tar-cand[i], l, list);
+      l.remove(l.size() - 1);
+    }
+    comb(cand, i + 1, tar, l, list);
+
+  }
+
+}*/
